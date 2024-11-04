@@ -1,57 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
+import { menuItems } from '../data/data';
 
 const Menu = () => {
+  const sections = Array.from(new Set(menuItems.map((item) => item.section)));
   return (
     <MenuContainer>
       <MenuHeader>Our Menu</MenuHeader>
       <MenuContent>
-        <MenuColumn>
-          <SectionTitle>Drinks</SectionTitle>
-          <MenuItem>
-            <ItemName>Coffee</ItemName>
-            <ItemPrice>$3.00</ItemPrice>
-          </MenuItem>
-          <MenuItem>
-            <ItemName>Tea</ItemName>
-            <ItemPrice>$2.50</ItemPrice>
-          </MenuItem>
-          <MenuItem>
-            <ItemName>Soda</ItemName>
-            <ItemPrice>$1.50</ItemPrice>
-          </MenuItem>
-
-          <SectionTitle>Desserts</SectionTitle>
-          <MenuItem>
-            <ItemName>Chocolate Cake</ItemName>
-            <ItemPrice>$4.00</ItemPrice>
-          </MenuItem>
-          <MenuItem>
-            <ItemName>Ice Cream</ItemName>
-            <ItemPrice>$3.50</ItemPrice>
-          </MenuItem>
-        </MenuColumn>
-        <MenuColumn>
-          <SectionTitle>Main Dishes</SectionTitle>
-          <MenuItem>
-            <ItemName>Grilled Chicken</ItemName>
-            <ItemPrice>$10.00</ItemPrice>
-          </MenuItem>
-          <MenuItem>
-            <ItemName>Vegetable Stir Fry</ItemName>
-            <ItemPrice>$9.00</ItemPrice>
-          </MenuItem>
-
-          <SectionTitle>Breakfast</SectionTitle>
-          <MenuItem>
-            <ItemName>Pancakes</ItemName>
-            <ItemPrice>$5.00</ItemPrice>
-          </MenuItem>
-          <MenuItem>
-            <ItemName>Omelette</ItemName>
-            <ItemPrice>$6.00</ItemPrice>
-          </MenuItem>
-        </MenuColumn>
+        {sections.map((section) => (
+          <MenuColumn key={section}>
+            <SectionTitle>{section}</SectionTitle>
+            {menuItems
+              .filter((item) => item.section === section)
+              .map((item, index) => (
+                <MenuItem key={index}>
+                  <ItemName>{item.name}</ItemName>
+                  <ItemPrice>{item.price}</ItemPrice>
+                </MenuItem>
+              ))}
+          </MenuColumn>
+        ))}
       </MenuContent>
     </MenuContainer>
   );
@@ -70,7 +39,7 @@ const MenuContainer = styled.div`
 
 const MenuHeader = styled.h1`
   text-align: center;
-  color: #333;
+  color: #495e57;
 `;
 
 const MenuContent = styled.div`
@@ -90,7 +59,7 @@ const MenuColumn = styled.div`
 `;
 
 const SectionTitle = styled.h2`
-  color: #444;
+  color: #495e57;
   border-bottom: 2px solid #555;
   padding-bottom: 5px;
 `;
@@ -102,11 +71,11 @@ const MenuItem = styled.div`
 `;
 
 const ItemName = styled.span`
-  color: #666;
+  color: #495e57;
 `;
 
 const ItemPrice = styled.span`
-  color: #333;
+  color: #495e57;
   font-weight: bold;
 `;
 

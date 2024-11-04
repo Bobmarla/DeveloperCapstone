@@ -5,7 +5,7 @@ import { HashLink } from 'react-router-hash-link';
 const NavBar = () => {
   return (
     <UnorderedList>
-      <StyledLink to={'/'}>Home</StyledLink>
+      <StyledLink to={'/home'}>Home</StyledLink>
       <StyledLink to={'/reservation'}>Reservation</StyledLink>
       <StyledLink to={'/order-online'}>Order Online</StyledLink>
       <StyledLink to={'/menu'}>Menu</StyledLink>

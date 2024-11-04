@@ -10,6 +10,7 @@ import Reservation from './components/Reservation';
 import OrderOnline from './components/OrderOnline';
 import Footer from './components/Footer';
 import Menu from './components/Menu';
+import Home from './components/Home';
 
 const Layout = ({ children }) => {
   return (
@@ -20,21 +21,21 @@ const Layout = ({ children }) => {
     </>
   );
 };
-const DefaultContent = () => {
-  return (
-    <div>
-      <h2>Welcome to the Main Page</h2>
-      <p>This is the about section of our application.</p>
-    </div>
-  );
-};
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: (
       <Layout>
-        <DefaultContent />
+        <Home />
+      </Layout>
+    ),
+  },
+  {
+    path: '/home',
+    element: (
+      <Layout>
+        <Home />
       </Layout>
     ),
   },
@@ -65,7 +66,7 @@ const router = createBrowserRouter([
 
   {
     path: '*',
-    element: <Navigate to="/" replace />,
+    element: <Navigate to="/home" replace />,
   },
 ]);
 
