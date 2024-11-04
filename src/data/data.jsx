@@ -11,7 +11,32 @@ export const menuItems = [
   { name: 'Pancakes', price: '$5.00', section: 'Breakfast' },
   { name: 'Omelette', price: '$6.00', section: 'Breakfast' },
 ];
-
+export const testimonialsData = [
+  {
+    id: 1,
+    name: 'Alice Johnson',
+    quote: "The best Italian food I've ever had! Highly recommend the pizza.",
+    image: images.testimonials,
+  },
+  {
+    id: 2,
+    name: 'Bob Smith',
+    quote: 'A lovely atmosphere and delicious pasta dishes!',
+    image: images.testimonials,
+  },
+  {
+    id: 3,
+    name: 'Catherine Brown',
+    quote: 'Amazing service and the risotto was out of this world!',
+    image: images.testimonials,
+  },
+  {
+    id: 4,
+    name: 'David Wilson',
+    quote: 'The tiramisu was heavenly! Will definitely come back.',
+    image: images.testimonials,
+  },
+];
 export const aboutData = {
   title: 'Little Lemon',
   subTitle: 'Chicago',
@@ -30,6 +55,4 @@ export const aboutData = {
   as a chef in Italy. Adrian does all the marketing for the restaurant and led the effort to 
     expand the menu beyond classic Italian to incorporate 
   additional cuisines from the Mediterranean region. `,
-  image1: images.MarioandAdrianA,
-  image2: images.resturantChefB,
 };

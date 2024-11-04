@@ -7,6 +7,7 @@ import MarioandAdrianA from '../assets/MarioandAdrianA.jpg';
 import MarioandAdrianb from '../assets/MarioandAdrianb.jpg';
 import restaurant from '../assets/restaurant.jpg';
 import resturantChefB from '../assets/restaurantChefB.jpg';
+import testimonials from '../assets/testimonials.jpg';
 
 export default {
   logo,
@@ -18,4 +19,5 @@ export default {
   MarioandAdrianb,
   restaurant,
   resturantChefB,
+  testimonials,
 };
